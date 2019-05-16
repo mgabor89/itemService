@@ -42,11 +42,12 @@ public class ItemControllerIT {
     @Test
     public void testNotExistingPersonByIdShouldReturn404() {
         TestRestTemplate testRestTemplate = new TestRestTemplate();
-
-        ResponseEntity<Item> result = testRestTemplate.getForEntity("http://localhost:" + localPort + "/item/42", Item.class);
+        long itemId = 42L;
+        
+        ResponseEntity<String> result = testRestTemplate.getForEntity("http://localhost:" + localPort + "/item/" + itemId, String.class);
 
         assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
-        assertNull(result.getBody().getName());
-        assertNull(result.getBody().getId());
+        ;
+		assertTrue(result.getBody().contains(new ItemNotFoundException(itemId).getMessage()));
     }
 }
