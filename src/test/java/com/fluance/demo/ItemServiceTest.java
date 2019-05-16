@@ -37,7 +37,7 @@ public class ItemServiceTest {
         // when
         when(itemRepository.count()).thenReturn(MORE_THAN_MAXIMUM_ALLOWED);
         when(serviceConfig.getMaximumNumber()).thenReturn(MAXIMUM_ALLOWED_NR_OF_ITEMS);
-        Item savedItem = itemService.store(newItem);
+        itemService.store(newItem);
         // then
         fail("You should not see this messages: we are expecting an exception.");
     }
@@ -63,7 +63,7 @@ public class ItemServiceTest {
         final long itemId = 12345L;
         // when
         when(itemRepository.findById(itemId)).thenReturn(Optional.empty());
-        Item foundItem = itemService.findById(itemId);
+        itemService.findById(itemId);
         // then
         fail("You should not see this messages: we are expecting an exception.");
     }

@@ -1,9 +1,12 @@
 package com.fluance.demo;
 
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
@@ -12,7 +15,7 @@ public class ItemController {
     private final ItemService itemService;
 
     @PostMapping(value = "/store")
-    public Item store(@RequestBody Item item) {
+    public Item store(@Valid @RequestBody Item item) {
         return itemService.store(item);
     }
 

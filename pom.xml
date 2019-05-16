@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fluance</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>item-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
@@ -131,7 +131,7 @@
 				<configuration>
 					<skipTests>${skip.unit.tests}</skipTests>
 					<excludes>
-						<exclude>**/IT*.java</exclude>
+						<exclude>**/*IntegrationTest*.java</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
@@ -148,6 +148,9 @@
 						</goals>
 						<configuration>
 							<skipTests>${skip.integration.tests}</skipTests>
+							<includes>
+					            <include>**/*IntegrationTest.java</include>
+					        </includes>
 						</configuration>
 					</execution>
 					<execution>

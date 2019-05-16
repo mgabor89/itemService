@@ -6,7 +6,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import java.util.Optional;
 
 @Data
@@ -15,7 +15,7 @@ public class Item {
     @Id
     @GeneratedValue
     private Long id;
-    @NotNull
+    @NotBlank(message = "Name is mandatory")
     private final String name;
     private String description;
 
