@@ -1,9 +1,58 @@
-= Spring REST Docs for the items web service
+:sectnums:
+:sectnumlevels: 5
+:toc: left
+:toclevels: 3
+:page-layout: docs
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
 
-This is an example output for a service running at http://localhost:8080:
+= Item API
 
-.request
-include::{snippets}/item-getAll-ok/http-request.adoc[]
+[[examples]]
+== Examples
 
-.response
-include::{snippets}/item-getAll-ok/http-response.adoc[]
+[[resource-people-create]]
+=== Storing items
+A `POST` request tries to store a new item. If the maximum limit is reached, reponse will be `BAD_REQUEST`.
+
+==== Request structure
+
+include::{snippets}/storeItem/request-body.adoc[]
+
+==== Example request
+
+include::{snippets}/storeItem/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/storeItem/http-response.adoc[]
+
+
+[[resource-items-find-all]]
+=== Getting all items
+A `GET` request gets all the existing items.
+
+==== Example request
+
+include::{snippets}/getAll/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/getAll/http-response.adoc[]
+
+[[resource-item-find-by-id]]
+=== Getting an item by a given ID
+A `GET` request gets the item with the given ID if it's found.
+
+==== Request structure
+
+include::{snippets}/findById/path-parameters.adoc[]
+
+==== Example request
+
+include::{snippets}/findById/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/findById/http-response.adoc[]

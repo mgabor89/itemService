@@ -29,15 +29,8 @@ public class Item {
         this.description = Optional.ofNullable(description).orElse("");
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+   Item(Long id, String name, String description) {
+        this(name, description);
+        this.id = id;
     }
 }

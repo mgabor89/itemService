@@ -8,8 +8,12 @@ For further reference, please consider the following sections:
 ### Guides
 The following guides illustrate how to use some features concretely:
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* Run unit tests: ./mvnw test -P dev
+* Run integration tests: ./mvnw test -P integration-test
+* Generate documentation: ./mvnw package. You will find the generated index.html under target/generated-docs
+* Launch SpringBoot application: java -jar target/item-api-0.0.1-SNAPSHOT.jar This will start up the webservice and you can send requests to it via http://localhost:8080/item
 
+Please see the generated documentation also, to find out what operations are possible.
+
+#####Right now the project runs with an embedded Tomcat 7, which is the default setting for SpringBoot.
+ 
