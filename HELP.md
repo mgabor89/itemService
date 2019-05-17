@@ -15,5 +15,5 @@ The following guides illustrate how to use some features concretely:
 
 Please see the generated documentation also, to find out what operations are possible.
 
-#####Right now the project runs with an embedded Tomcat 9, which is the default setting for SpringBoot.
+##### Right now the project runs with an embedded Tomcat 9, which is the default setting for SpringBoot 2.1.4.
  
